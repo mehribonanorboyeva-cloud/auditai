@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Audit AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<script src="script.js"></script>
+
+<body>
+
+<nav>
+<ul>
+<li><a href="#demo">Demo</a></li>
+<li><a href="#muammo">Muammo</a></li>
+<li><a href="#yechim">Yechim</a></li>
+<li><a href="#ishlaydi">Qanday ishlaydi</a></li>
+<li><a href="#jamoa">Jamoa</a></li>
+<li><a href="#moliya">Moliyaviy foyda</a></li>
+<li><a href="#roadmap">Yo'l xaritasi</a></li>
+<li><a href="#mvp">MVP</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Audit AI</h1>
+<p>AI yordamida avtomatik audit tizimi</p>
+<a href="#demo" class="btn">Demo ko‘rish</a>
+</section>
+
+<!-- DEMO -->
+<section id="demo">
+<h2 class="section-title">Live Demo</h2>
+
+<div id="authBox" class="card" style="margin:auto; text-align:center;">
+    <h3>Login</h3>
+    <input id="username" placeholder="Username"><br><br>
+    <input id="password" type="password" placeholder="Password"><br><br>
+    <button class="btn" onclick="login()">Login</button>
+    <p id="msg"></p>
+</div>
+
+<div id="dashboard" style="display:none; text-align:center;">
+    <h2>Audit Dashboard</h2>
+    <p>Hujjat yuklang:</p>
+    <input type="file" id="fileInput"><br><br>
+    <button class="btn" onclick="analyze()">AI Analiz</button>
+
+    <div id="result" style="margin-top:30px;"></div>
+</div>
+  <div class="demo-video">
+    <video controls width="800">
+      <source src="videos/demo.mp4" type="video/mp4">
+      Sizning brauzeringiz video tagini qo‘llab-quvvatlamaydi.
+    </video>
+
+    <!-- Mazmunli izoh -->
+    <div class="video-description">
+      <p>
+        Ushbu demo videosida AuditAI tizimi qanday ishlashini ko‘rishingiz mumkin. 
+        Video davomida tizim foydalanuvchi tomonidan yuborilgan fayllarni avtomatik ravishda tahlil qiladi, 
+        kiberxavfsizlik nuqtai nazaridan aniqlik bilan tekshiradi va muammolarni aniqlaydi. 
+        Har bir fayl bo‘yicha aniqlangan xatolar, tavsiyalar, xavf darajasi va aniqlik foizlari batafsil ko‘rsatiladi. 
+        Bu tizim kompaniyalar va shaxslar uchun xavfsiz fayl almashinuvi va auditorlik jarayonlarini soddalashtiradi, 
+        shuningdek, tezkor va ishonchli natijalar beradi.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MUAMMO -->
+<section id="muammo">
+<h2 class="section-title">Odamlar duch keladigan muammolar</h2>
+
+<div class="problem-grid">
+
+  <div class="problem-card">
+    <div class="icon">⏳</div>
+    <h3>Vaqt juda ko‘p ketadi</h3>
+    <p>Audit hujjatlarini tekshirish haftalar davom etadi.</p>
+  </div>
+
+  <div class="problem-card">
+    <div class="icon">💸</div>
+    <h3>Juda qimmat xizmat</h3>
+    <p>Kichik biznes audit xizmatiga pul topolmaydi.</p>
+  </div>
+
+  <div class="problem-card">
+    <div class="icon">❌</div>
+    <h3>Inson xatosi ko‘p</h3>
+    <p>Qo‘lda tekshirishda xatolar o‘tkazib yuboriladi.</p>
+  </div>
+
+  <div class="problem-card">
+    <div class="icon">📄</div>
+    <h3>Hujjatlar tartibsiz</h3>
+    <p>Fayllar ko‘p va tizimlashtirilmagan.</p>
+  </div>
+
+  <div class="problem-card">
+    <div class="icon">😰</div>
+    <h3>Stress va risk</h3>
+    <p>Auditdan qo‘rqish va jarimalar xavfi.</p>
+  </div>
+
+</div>
+</section>
+
+
+<!-- YECHIM -->
+<section id="yechim">
+<h2 class="section-title">Bizning yechimlarimiz</h2>
+
+<div class="solution-grid">
+
+  <div class="solution-card">
+    <div class="solution-icon">🤖</div>
+    <h3>AI avtomatik audit</h3>
+    <p>Hujjatlarni soniyalar ichida tekshiradi.</p>
+  </div>
+
+  <div class="solution-card">
+    <div class="solution-icon">⚡</div>
+    <h3>Tezkor analiz</h3>
+    <p>Haftalik ishni bir necha daqiqada bajaradi.</p>
+  </div>
+
+  <div class="solution-card">
+    <div class="solution-icon">📊</div>
+    <h3>Risk aniqlash</h3>
+    <p>Moliyaviy xatolar va risklarni topadi.</p>
+  </div>
+
+  <div class="solution-card">
+    <div class="solution-icon">☁️</div>
+    <h3>Bulut tizimi</h3>
+    <p>Istalgan joydan hujjat yuklash imkoniyati.</p>
+  </div>
+
+  <div class="solution-card">
+    <div class="solution-icon">💰</div>
+    <h3>Xarajatni kamaytirish</h3>
+    <p>Audit xarajatlarini 70% gacha qisqartiradi.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- QANDAY ISHLAYDI -->
+<section id="ishlaydi">
+  <h2 class="section-title">Qanday ishlaydi</h2>
+
+  <div class="process-grid">
+
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div class="step-icon">🌐</div>
+      <h3>URL yoki hujjat yuklash</h3>
+      <p>Foydalanuvchi sayt URL yoki faylni tizimga yuklaydi.</p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-icon">🤖</div>
+      <h3>AI tekshiruv</h3>
+      <p>Sun’iy intellekt tizimi kiberxavfsizlik va audit tahlilini boshlaydi.</p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-icon">⚠️</div>
+      <h3>Xatolarni aniqlash</h3>
+      <p>SEO, xavfsizlik va texnik xatolar aniqlanadi, risk darajasi hisoblanadi.</p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-icon">📊</div>
+      <h3>Hisobot tayyorlash</h3>
+      <p>Analiz natijalari tushunarli hisobot ko‘rinishida chiqariladi.</p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-number">5</div>
+      <div class="step-icon">💡</div>
+      <h3>Tavsiyalar berish</h3>
+      <p>AI tizimi risklarni kamaytirish va optimizatsiya qilish bo‘yicha tavsiyalar beradi.</p>
+    </div>
+
+  </div>
+
+  <!-- TECHNICAL DETAILS -->
+  <div class="tech-details">
+    <h3 class="section-title">Texnik tafsilotlar</h3>
+    <div class="tech-grid">
+
+      <div class="tech-card">
+        <h4>Model turi</h4>
+        <p>Transformer-based NLP & CV model</p>
+      </div>
+
+      <div class="tech-card">
+        <h4>Framework</h4>
+        <p>TensorFlow + PyTorch</p>
+      </div>
+
+      <div class="tech-card">
+        <h4>Backend</h4>
+        <p>Node.js + FastAPI</p>
+      </div>
+
+      <div class="tech-card">
+        <h4>Ma’lumotlar bazasi</h4>
+        <p>MongoDB + PostgreSQL</p>
+      </div>
+
+      <div class="tech-card">
+        <h4>Aniqlik</h4>
+        <p>95%+ real xatolarni aniqlash</p>
+      </div>
+
+      <div class="tech-card">
+        <h4>Javob vaqti</h4>
+        <p>O‘rtacha 2-3 soniya / fayl</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- JAMOA -->
+<section id="jamoa">
+  <h2 class="section-title">Jamoa & Nega biz</h2>
+
+  <!-- TEAM GRID -->
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img src="images/mehribon.jpg" alt="Mehribon" class="team-img">
+      <h3>Anorboyeva Mehribon</h3>
+      <p class="role">Project Manager</p>
+      <p class="faculty">Samarqand Davlat Tibbiyot Universiteti, Pediatriya, 1-bosqich</p>
+      <p class="skills">Loyiha boshqarish, taqdimotlar, kommunikatsiya</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/gulandon.jpg" alt="Gulandon" class="team-img">
+      <h3>Egamberdiyeva Gulandon</h3>
+      <p class="role">AI Engineer</p>
+      <p class="faculty">Samarqand Davlat Tibbiyot Universiteti, Pediatriya, 1-bosqich</p>
+      <p class="skills">AI model yaratish, data processing, tahlil</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/aziza.jpg" alt="Aziza" class="team-img">
+      <h3>Khodjakeldiyeva Aziza</h3>
+      <p class="role">Frontend Developer</p>
+      <p class="faculty">Samarqand Davlat Tibbiyot Universiteti, Davolash ishi, 1-bosqich</p>
+      <p class="skills">HTML, CSS, JS, UI/UX dizayn</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/iroda.jpg" alt="Iroda" class="team-img">
+      <h3>Iskandarova Iroda</h3>
+      <p class="role">Backend Developer</p>
+      <p class="faculty">Samarqand Davlat Tibbiyot Universiteti, Davolash ishi, 1-bosqich</p>
+      <p class="skills">Node.js, Python, Database management</p>
+    </div>
+
+  </div>
+
+  <!-- WHY US -->
+  <div class="why-us">
+    <h3 class="section-title">Nega aynan biz?</h3>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <img src="images/award1.png" alt="Yutuq 1">
+        <p>Hackathon 2025 1-o‘rin</p>
+      </div>
+      <div class="achievement-card">
+        <img src="images/award2.png" alt="Yutuq 2">
+        <p>AI model tanlovi g‘olibi</p>
+      </div>
+      <div class="achievement-card">
+        <img src="images/award3.png" alt="Yutuq 3">
+        <p>Eng innovatsion loyiha mukofoti</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+  <!-- WHY US -->
+  <div class="why-us">
+    <h3 class="section-title">Nega aynan biz?</h3>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <img src="images/award1.png" alt="Yutuq 1">
+        <p>Hackathon 2025 1-o‘rin</p>
+      </div>
+      <div class="achievement-card">
+        <img src="images/award2.png" alt="Yutuq 2">
+        <p>AI model tanlovi g‘olibi</p>
+      </div>
+      <div class="achievement-card">
+        <img src="images/award3.png" alt="Yutuq 3">
+        <p>Eng innovatsion loyiha mukofoti</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- MOLIYA -->
+<section id="moliya">
+  <h2 class="section-title">Moliyaviy foyda</h2>
+
+  <div class="finance-grid">
+
+    <div class="finance-card">
+      <h3>Obuna modeli</h3>
+      <p class="stats">50+ mijoz/oy</p>
+      <p>Har bir mijoz oylik obuna to‘laydi (50$), ya’ni 50 mijoz → 2500$/oy. Loyihamiz barqaror daromad olib keladi.</p>
+    </div>
+
+    <div class="finance-card">
+      <h3>Premium audit xizmatlari</h3>
+      <p class="stats">20%+ foyda</p>
+      <p>Qo‘shimcha premium xususiyatlar (xavfsizlik monitoring, tezkor analiz) mijozlar uchun qo‘shimcha to‘lovlar keltiradi.</p>
+    </div>
+
+    <div class="finance-card">
+      <h3>Korxona litsenziyasi</h3>
+      <p class="stats">1000$/yil</p>
+      <p>Katta kompaniyalar uchun yillik litsenziya sotuvi loyihaga barqaror daromad qo‘shadi va brend ishonchini oshiradi.</p>
+    </div>
+
+    <div class="finance-card">
+      <h3>Resurslarni optimallashtirish</h3>
+      <p class="stats">2x samaradorlik</p>
+      <p>AI audit tufayli jamoa ko‘proq mijozlar bilan ishlashi mumkin, natijada loyihaning daromadi oshadi.</p>
+    </div>
+
+    <div class="finance-card">
+      <h3>Xatarlarni kamaytirish</h3>
+      <p class="stats">Jarimalar 70% kamayadi</p>
+      <p>Audit xatolarini kamaytirish orqali mijozlar kompaniyaga ko‘proq ishonadi va uzoq muddatli hamkorlik → ko‘proq daromad.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="yolxaritasi">
+  <h2 class="section-title">Loyihaning rivojlanish bosqichlari va kelajak rejalari</h2>
+
+  <div class="roadmap-grid">
+
+    <!-- 1-BOSQICH -->
+    <div class="roadmap-card completed">
+      <div class="roadmap-number">1</div>
+      <h3>Tadqiqot va tahlil</h3>
+      <p class="date">2025-yil noyabr</p>
+      <p>Muammolar aniqlanadi, yechimlar topiladi.</p>
+    </div>
+
+    <!-- 2-BOSQICH -->
+    <div class="roadmap-card completed">
+      <div class="roadmap-number">2</div>
+      <h3>Model ishlab chiqarish</h3>
+      <p class="date">2025-yil dekabr</p>
+      <p>Sun’iy intellekt modeli ishlab chiqiladi.</p>
+    </div>
+
+    <!-- 3-BOSQICH -->
+    <div class="roadmap-card in-progress">
+      <div class="roadmap-number">3</div>
+      <h3>MVP yaratish</h3>
+      <p class="date">2026-yil yanvar</p>
+      <p>Minimal ishlaydigan mahsulot tayyorlanadi.</p>
+    </div>
+
+    <!-- 4-BOSQICH -->
+    <div class="roadmap-card in-progress">
+      <div class="roadmap-number">4</div>
+      <h3>Pilot va takomillashtirish</h3>
+      <p class="date">2026-yil mart-aprel</p>
+      <p>Foydalanuvchilar keng qamrab olinadi, fikrlar yig‘iladi, viloyatlar kesimida tajriba o‘tkaziladi.</p>
+    </div>
+
+    <!-- 5-BOSQICH -->
+    <div class="roadmap-card in-progress">
+      <div class="roadmap-number">5</div>
+      <h3>Kengaytirish</h3>
+      <p class="date">2026-yil iyun-iyul</p>
+      <p>Yangi funksiyalar qo‘shiladi, qulayliklar yaratiladi.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- MVP -->
+<section id="mvp">
+  <h2 class="section-title">MVP – Minimal Ishlaydigan Mahsulot</h2>
+
+ 
+  <!-- Modal -->
+  <div id="fileModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle">Namuna fayl</h3>
+      <p id="modalDetails">Fayl tekshiruvi muvaffaqiyatli yakunlandi. Batafsil tafsilotlar quyida keltirilgan.</p>
+      <p id="modalCyber">Kiberxavfsizlik mavjudligi</p>
+      <div class="stats-bar"><div id="cyberBar" class="stats-fill">85%</div></div>
+      <p id="modalProblems">Aniqlangan muammolar: 2 xato, 3 tavsiya</p>
+      <p id="modalStats">Aniqlik: 95%, Javob vaqti: 2 soniya</p>
+      <p id="modalLevel">Xavfsizlik darajasi: Yuqori</p>
+    </div>
+  </div>
+  <div class="mvp-card">
+  <div class="mvp-icon">📄</div>
+  <h3>Namuna fayl</h3>
+  <p>Audit sanasi: 2026-02-07</p>
+
+  <!-- Namuna yozuvlar -->
+  <p>Kiberxavfsizlik darajasi: 85%</p>
+  <p>Aniqlik va javob vaqti: 95%, 2 soniya</p>
+  <p>Aniqlangan muammolar: 2 xato, 3 tavsiya</p>
+</div>
+<div class="mvp-card">
+  <div class="mvp-icon">📄</div>
+  <h3>Namuna fayl</h3>
+  <p>Audit sanasi: 2026-02-07</p>
+
+  <!-- Kiberxavfsizlik -->
+  <p>Kiberxavfsizlik darajasi: 85%</p>
+
+  <!-- Aniqlik va javob vaqti -->
+  <p>Aniqlik va javob vaqti: 95%, 2 soniya</p>
+
+  <!-- Aniqlangan muammolar -->
+  <p>Aniqlangan muammolar: 2 xato, 3 tavsiya</p>
+
+  <!-- Risk foizi -->
+  <p>Risklar darajasi: 20%</p>
+
+  <!-- Hisobot tafsilotlari -->
+  <p>Hisobot: Fayl tahlili davomida 2 asosiy xavf aniqlangan va 3 tavsiya kiritildi. Kiberxavfsizlik darajasi yuqori va tizim xavfsizligi kafolatlangan.</p>
+</div>
+
+
+
+</section>
+
+</body>
+</html>
+<!-- CHAT BUTTON -->
+<div id="chatButton" onclick="toggleChat()">🤖</div>
+
+<!-- CHAT WINDOW -->
+<div id="chatWindow">
+  <div id="chatHeader">AuditAI Assistant</div>
+
+  <div id="chatMessages">
+    <p class="bot">Salom! Men AuditAI yordamchisiman 👋</p>
+    <p class="bot">Quyidagi savollardan birini tanlang:</p>
+
+    <div class="quick-questions">
+      <button onclick="quickQuestion('AuditAI nima?')">AuditAI nima?</button>
+      <button onclick="quickQuestion('Qanday ishlaydi?')">Qanday ishlaydi?</button>
+      <button onclick="quickQuestion('MVP nima?')">MVP nima?</button>
+      <button onclick="quickQuestion('Daromad qanday?')">Daromad qanday?</button>
+      <button onclick="quickQuestion('Jamoa kimlar?')">Jamoa kimlar?</button>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input id="userInput" placeholder="Savol yozing..." />
+    <button onclick="sendMessage()">Yuborish</button>
+  </div>
+</div>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuditAI - MVP Namuna</title>
+<style>
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background:#0f172a;
+  color:white;
+  margin:0; padding:0;
+}
+
+/* Section title */
+.section-title{
+  text-align:center;
+  font-size:32px;
+  margin-top:40px;
+  color:#22d3ee;
+}
+
+/* MVP kartochka */
+.mvp-grid{
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+}
+.mvp-card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(14px);
+  padding:25px;
+  border-radius:25px;
+  text-align:center;
+  cursor:pointer;
+  transition:.5s;
+  border-left:5px solid #22d3ee;
+  width:300px;
+}
+.mvp-card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 25px rgba(34,211,238,0.5);
+  background:linear-gradient(135deg, rgba(34,211,238,0.15), rgba(129,140,248,0.15));
+}
+.mvp-icon{
+  font-size:50px;
+  margin-bottom:15px;
+  animation:float 3s infinite ease-in-out;
+}
+.mvp-card h3{
+  margin-bottom:10px;
+  color:#22d3ee;
+}
+.mvp-card p{
+  font-size:14px;
+  line-height:1.5;
+  color:#e5e7eb;
+}
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+  100%{transform:translateY(0);}
+}
+
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  z-index:999;
+  left:0; top:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+}
+.modal-content{
+  background:#1f2937;
+  padding:25px;
+  border-radius:20px;
+  max-width:500px;
+  color:white;
+  text-align:left;
+  position:relative;
+}
+.close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:28px;
+  cursor:pointer;
+  color:#f87171;
+}
+.modal-content h3{
+  color:#22d3ee;
+  margin-bottom:10px;
+}
+.modal-content p{
+  margin-bottom:6px;
+  line-height:1.5;
+}
+.stats-bar{
+  background:rgba(255,255,255,0.1);
+  border-radius:10px;
+  margin:5px 0 15px;
+  height:20px;
+}
+.stats-fill{
+  background:#22d3ee;
+  height:100%;
+  border-radius:10px;
+  width:0;
+  text-align:right;
+  padding-right:5px;
+  box-sizing:border-box;
+  transition:width 1s;
+}
+</style>
+</head>
+<body>
+
+<section id="mvp">
+  <h2 class="section-title">MVP – Minimal Ishlaydigan Mahsulot</h2>
+
+  <!-- Namuna fayl kartochkasi -->
+  <div class="mvp-grid">
+    <div class="mvp-card" onclick="showDetails()">
+      <div class="mvp-icon">📄</div>
+      <h3>Namuna fayl</h3>
+      <p>Audit sanasi: 2026-02-07</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="fileModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle">Namuna fayl</h3>
+      <p id="modalDetails">Fayl tekshiruvi muvaffaqiyatli yakunlandi. Batafsil tafsilotlar quyida keltirilgan.</p>
+      <p id="modalCyber">Kiberxavfsizlik mavjudligi</p>
+      <div class="stats-bar"><div id="cyberBar" class="stats-fill">85%</div></div>
+      <p id="modalProblems">Aniqlangan muammolar: 2 xato, 3 tavsiya</p>
+      <p id="modalStats">Aniqlik: 95%, Javob vaqti: 2 soniya</p>
+      <p id="modalLevel">Xavfsizlik darajasi: Yuqori</p>
+    </div>
+  </div>
+
+</section>
+
+<script>
+const modal = document.getElementById('fileModal');
+const cyberBar = document.getElementById('cyberBar');
+
+function showDetails(){
+  modal.style.display = 'flex';
+  // Kiberxavfsizlik foizini animatsion ko'rsatish
+  setTimeout(()=>{ cyberBar.style.width = '85%'; }, 100);
+}
+
+function closeModal(){
+  modal.style.display = 'none';
+  cyberBar.style.width = '0';
+}
+</script>
+
+</body>
+</html>
+<div class="mvp-card">
+  <div class="mvp-icon">📄</div>
+  <h3>Namuna fayl</h3>
+  <p>Audit sanasi: 2026-02-07</p>
+
+  <!-- Kiberxavfsizlik foizi -->
+  <p>Kiberxavfsizlik darajasi</p>
+  <div class="stats-bar">
+    <div class="stats-fill" style="width:85%;">85%</div>
+  </div>
+
+  <!-- Aniqlik va statistik ma'lumotlar -->
+  <p>Aniqlik va Javob vaqti</p>
+  <div class="stats-bar">
+    <div class="stats-fill" style="width:95%;">95%</div>
+  </div>
+
+  <!-- Aniqlangan muammolar -->
+  <p>Aniqlangan muammolar</p>
+  <div class="stats-bar">
+    <div class="stats-fill" style="width:50%;">2 xato, 3 tavsiya</div>
+  </div>
+</div>

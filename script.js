@@ -215,3 +215,17 @@ function addMessage(sender,text){
   const chat=document.getElementById("chatMessages");
   chat.innerHTML+=`<p><b>${sender}:</b> ${text}</p>`;
 }
+function startScan(){
+    document.getElementById("uploadBox").classList.add("hidden");
+    document.getElementById("loadingBox").classList.remove("hidden");
+
+    // Fake AI scanning ⏳
+    setTimeout(()=>{
+        document.getElementById("loadingBox").classList.add("hidden");
+        document.getElementById("successBox").classList.remove("hidden");
+    }, 3000);
+}
+
+function showReport(){
+    window.location.href="report.html";
+}

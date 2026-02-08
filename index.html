@@ -295,23 +295,18 @@
 
 
   <!-- WHY US -->
-  <div class="why-us">
-    <h3 class="section-title">Nega aynan biz?</h3>
-    <div class="achievements-grid">
-      <div class="achievement-card">
-        <img src="images/award1.png" alt="Yutuq 1">
-        <p>Hackathon 2025 1-o‘rin</p>
-      </div>
-      <div class="achievement-card">
-        <img src="images/award2.png" alt="Yutuq 2">
-        <p>AI model tanlovi g‘olibi</p>
-      </div>
-      <div class="achievement-card">
-        <img src="images/award3.png" alt="Yutuq 3">
-        <p>Eng innovatsion loyiha mukofoti</p>
-      </div>
-    </div>
-  </div>
+  <h2>Our Achievements</h2>
+<p>Our team members have international certificates in IT and cybersecurity.</p>
+
+<div class="cert-grid">
+    <img src="images/cert1.png">
+    <img src="images/cert2.png">
+    <img src="images/cert3.png">
+    <img src="images/cert4.png">
+    <img src="images/cert5.png">
+    <img src="images/cert6.png">
+</div>
+
 
 </section>
 
@@ -483,3 +478,55 @@
     <button onclick="sendMessage()">Yuborish</button>
   </div>
 </div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AI Security Audit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1 class="title">Audit AI Demo</h1>
+
+<!-- LOGIN + UPLOAD -->
+<div id="formBox" class="card">
+    <h2>Login to start audit</h2>
+
+    <input type="text" placeholder="Login">
+    <input type="password" placeholder="Password">
+
+    <hr style="margin:20px">
+
+    <h3>Upload file or paste link</h3>
+
+    <input type="file">
+    <input type="text" placeholder="https://example.com">
+
+    <button onclick="startScan()" class="btn">Start Audit</button>
+</div>
+
+<!-- SCANNING -->
+<div id="loadingBox" class="card hidden">
+    <div class="loader"></div>
+    <h2>AI scanning in progress...</h2>
+    <p>Checking vulnerabilities</p>
+</div>
+
+<!-- SUCCESS -->
+<div id="successBox" class="card hidden">
+    <h2>Audit successful ✅</h2>
+    <button onclick="showReport()" class="btn">View Results</button>
+</div>
+
+</div>
+
+<script>
+function startScan(){
+    document.getElementById("formBox").classList.add("hidden");
+    document.getElementById("loadingBox").classList.remove("hidden");
+
+    setTimeout(()=>{
+        document.

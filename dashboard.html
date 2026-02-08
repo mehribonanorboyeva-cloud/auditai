@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Audit AI Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="title">AI Security Audit</h1>
+
+    <div id="uploadBox" class="card">
+        <h2>Upload file or paste link</h2>
+
+        <input type="file" id="fileInput">
+        <input type="text" id="linkInput" placeholder="or paste website link">
+
+        <button onclick="startScan()" class="btn">Start Audit</button>
+    </div>
+
+    <!-- Loading animation -->
+    <div id="loadingBox" class="card hidden">
+        <div class="loader"></div>
+        <h2>Scanning system...</h2>
+        <p>AI analyzing vulnerabilities</p>
+    </div>
+
+    <!-- Success -->
+    <div id="successBox" class="card hidden">
+        <h2>Audit completed successfully ✅</h2>
+        <button onclick="showReport()" class="btn">View Results</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

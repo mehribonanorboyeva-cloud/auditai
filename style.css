@@ -975,3 +975,95 @@ section{
   padding:12px;
   cursor:pointer;
 }
+body{
+    background: linear-gradient(135deg,#0f172a,#020617);
+    font-family: Arial;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    margin-top:80px;
+}
+
+.title{
+    font-size:42px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#0b1220;
+    padding:40px;
+    width:400px;
+    margin:auto;
+    border-radius:20px;
+    box-shadow:0 0 30px #00f0ff33;
+    animation: fadeIn 1s;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:10px;
+    border-radius:10px;
+    border:none;
+}
+
+.btn{
+    padding:12px 25px;
+    background:#00f0ff;
+    border:none;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.btn:hover{
+    background:#00c8d6;
+}
+
+.hidden{
+    display:none;
+}
+
+/* LOADER ANIMATION 🔥 */
+.loader{
+    border:6px solid #1e293b;
+    border-top:6px solid #00f0ff;
+    border-radius:50%;
+    width:60px;
+    height:60px;
+    margin:20px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px)}
+    to{opacity:1; transform:translateY(0)}
+}
+.cert-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:25px;
+    margin-top:30px;
+    padding:20px;
+}
+
+.cert-grid img{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 0 25px #00f0ff33;
+    transition:0.4s;
+    cursor:pointer;
+}
+
+.cert-grid img:hover{
+    transform:scale(1.07);
+    box-shadow:0 0 35px #00f0ff88;
+}
